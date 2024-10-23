@@ -23,6 +23,11 @@ export class ProductService {
   {
     this.products.push(newProduct);
   }
+  deleteProduct(product :ProductModel)
+  {
+    const index  =this.products.indexOf(product,0);
+    this.products.splice(index,1);
+  }
 
 
 

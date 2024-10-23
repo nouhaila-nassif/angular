@@ -9,6 +9,8 @@
           <th>Product Name</th>
           <th>Product Price</th>
           <th>Date Created</th>
+          <th>Edit</th>
+          <th>Delete</th>
         </tr>
         </thead>
         <tbody>
@@ -18,6 +20,14 @@
           <td>{{ product.productName }}</td>
           <td>{{ product.productPrice | currency:'USD':'symbol':'1.2-2' }}</td> <!-- Format de prix -->
           <td>{{ product.dateCreation | date:'shortDate' }}</td> <!-- Formatez la date si nécessaire -->
+          <!-- Bouton Edit -->
+          <td>
+            <a [routerLink]="['/edit-product', product.productId]" class="btn btn-warning">Edit</a> <!-- Utilisation de routerLink -->
+          </td>
+          <!-- Bouton Delete -->
+          <td>
+            <a class="btn btn-danger" (click)="deleteProduct(product)">Delete</a>
+          </td>
         </tr>
         </tbody>
       </table>
